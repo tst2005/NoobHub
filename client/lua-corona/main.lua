@@ -66,4 +66,4 @@ timer.performWithDelay( 5000, function()
 			timestamp = system.getTimer()
 		}
 	});
-  end, 0 );
+end, 0 );

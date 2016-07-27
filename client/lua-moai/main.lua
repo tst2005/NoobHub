@@ -111,7 +111,7 @@ hub:subscribe({
 			local count = 0;
 			for i,lat in ipairs(latencies) do
 				sum = sum + lat;
-				count =  count+1;
+				count = count + 1;
 			end
 
 			aReportMsg = aReportMsg .. "---------- "..count..') average =  '..(sum/count)
@@ -127,16 +127,16 @@ local timer = MOAITimer.new ()
 timer:setSpan ( 2 )
 timer:setMode(MOAITimer.LOOP)
 timer:setListener ( MOAITimer.EVENT_TIMER_END_SPAN, function()
-					--timer:stop()
-					appMessage("ping sent");
-					hub:publish({
-						message = {
-							action  =  "ping",
-							id = md5( math.random() .. '' ),
-							timestamp = ms
-						}
-					});
-			end, true )
+	--timer:stop()
+	appMessage("ping sent");
+	hub:publish({
+		message = {
+			action  =  "ping",
+			id = md5( math.random() .. '' ),
+			timestamp = ms
+		}
+	});
+end, true )
 timer:start()
 
 function md5 ( data )
